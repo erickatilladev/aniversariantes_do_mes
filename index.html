@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniversariantes por Unidade</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <h1 class="page-title">
+            🎉 Aniversariantes de <span id="mes-atual"></span>
+          </h1>
+          <nav class="unidades-nav" id="unidades-nav">
+            <!-- Botões de unidade serão inseridos aqui via JavaScript -->
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="mes-info">
+          <h2>Celebre conosco! 🎂</h2>
+          <p>
+            Confira os colaboradores que estão comemorando aniversário este mês
+          </p>
+        </div>
+
+        <!-- Calendário -->
+        <section class="calendario-section">
+          <h2>
+            📅 Calendário de Aniversários -
+            <span id="unidade-selecionada">Todas as Unidades</span>
+          </h2>
+          <div class="calendario-container">
+            <div class="calendario-header">
+              <button id="prev-month" class="calendario-nav">‹</button>
+              <h3 id="calendario-mes-ano"></h3>
+              <button id="next-month" class="calendario-nav">›</button>
+            </div>
+            <div class="calendario-grid" id="calendario-grid">
+              <!-- Dias da semana -->
+              <div class="dia-semana">Dom</div>
+              <div class="dia-semana">Seg</div>
+              <div class="dia-semana">Ter</div>
+              <div class="dia-semana">Qua</div>
+              <div class="dia-semana">Qui</div>
+              <div class="dia-semana">Sex</div>
+              <div class="dia-semana">Sáb</div>
+              <!-- Dias do mês serão inseridos aqui via JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Lista de aniversariantes -->
+        <section class="aniversariantes-section">
+          <h2>
+            👥 Lista de Aniversariantes -
+            <span id="unidade-selecionada-lista">Todas as Unidades</span>
+          </h2>
+          <div id="lista-aniversariantes">
+            <!-- Conteúdo será inserido aqui via JavaScript -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
