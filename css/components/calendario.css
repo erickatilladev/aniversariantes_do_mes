@@ -1,0 +1,141 @@
+/* ===== CALENDÁRIO ===== */
+.calendario-section {
+  margin-bottom: 3rem;
+}
+
+.calendario-container {
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendario-header h3 {
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.calendario-nav {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.calendario-nav:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dia-semana {
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.dia-calendario {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--border-radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  padding: 0.5rem 0.25rem;
+}
+
+.dia-calendario:hover {
+  background: var(--surface-alt);
+  transform: scale(1.05);
+  z-index: 5;
+  box-shadow: var(--shadow);
+}
+
+.dia-calendario.vazio {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.dia-calendario.vazio:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.dia-calendario.hoje {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  border-color: var(--primary);
+}
+
+.dia-calendario.aniversario {
+  background: var(--success);
+  color: white;
+  font-weight: 600;
+  border-color: var(--success);
+}
+
+.dia-calendario.aniversario-multiplo {
+  background: linear-gradient(135deg, var(--success), var(--primary-light));
+  color: white;
+  font-weight: 600;
+  border-color: var(--success);
+}
+
+.dia-calendario.outro-mes {
+  opacity: 0.4;
+}
+
+.numero-dia {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.indicador-aniversario {
+  display: flex;
+  gap: 2px;
+}
+
+.indicador-ponto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dia-calendario:not(.aniversario):not(.aniversario-multiplo):not(.hoje)
+  .indicador-ponto {
+  background: var(--primary);
+}

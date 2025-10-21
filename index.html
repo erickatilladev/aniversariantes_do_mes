@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniversariantes - Sistema 2.0</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/calendario.css" />
+    <link rel="stylesheet" href="css/components/modal.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">
+              <i class="fas fa-birthday-cake"></i>
+              <h1>Aniversariantes</h1>
+            </div>
+            <div class="month-display">
+              <span id="mes-atual"></span>
+            </div>
+          </div>
+
+          <div class="header-controls">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Buscar colaborador..."
+              />
+            </div>
+            <div class="stats">
+              <div class="stat-item">
+                <span class="stat-value" id="total-aniversariantes">0</span>
+                <span class="stat-label">Aniversariantes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="unidades-nav" id="unidades-nav">
+          <!-- Botões de unidade serão inseridos aqui via JavaScript -->
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Dashboard Cards -->
+        <section class="dashboard-cards">
+          <div class="card stat-card">
+            <div class="card-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="card-content">
+              <h3>Total de Colaboradores</h3>
+              <span class="card-value" id="total-colaboradores">0</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="card-icon">
+              <i class="fas fa-birthday-cake"></i>
+            </div>
+            <div class="card-content">
+              <h3>Aniversariantes do Mês</h3>
+              <span class="card-value" id="aniversariantes-mes">0</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="card-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="card-content">
+              <h3>Unidades</h3>
+              <span class="card-value" id="total-unidades">0</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="card-icon">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <div class="card-content">
+              <h3>Próximo Aniversário</h3>
+              <span class="card-value" id="proximo-aniversario">-</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Calendário -->
+        <section class="calendario-section">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-calendar-alt"></i>Calendário de Aniversários
+            </h2>
+            <div class="section-controls">
+              <span id="unidade-selecionada">Todas as Unidades</span>
+              <button id="today-btn" class="btn-secondary">Hoje</button>
+            </div>
+          </div>
+
+          <div class="calendario-container">
+            <div class="calendario-header">
+              <button id="prev-year" class="calendario-nav">
+                <i class="fas fa-angle-double-left"></i>
+              </button>
+              <button id="prev-month" class="calendario-nav">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <h3 id="calendario-mes-ano"></h3>
+              <button id="next-month" class="calendario-nav">
+                <i class="fas fa-angle-right"></i>
+              </button>
+              <button id="next-year" class="calendario-nav">
+                <i class="fas fa-angle-double-right"></i>
+              </button>
+            </div>
+            <div class="calendario-grid" id="calendario-grid">
+              <!-- Dias da semana -->
+              <div class="dia-semana">Dom</div>
+              <div class="dia-semana">Seg</div>
+              <div class="dia-semana">Ter</div>
+              <div class="dia-semana">Qua</div>
+              <div class="dia-semana">Qui</div>
+              <div class="dia-semana">Sex</div>
+              <div class="dia-semana">Sáb</div>
+              <!-- Dias do mês serão inseridos aqui via JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Lista de aniversariantes -->
+        <section class="aniversariantes-section">
+          <div class="section-header">
+            <h2><i class="fas fa-user-friends"></i>Lista de Aniversariantes</h2>
+            <div class="section-controls">
+              <span id="unidade-selecionada-lista">Todas as Unidades</span>
+              <div class="view-controls">
+                <button id="view-grid" class="view-btn active">
+                  <i class="fas fa-th"></i>
+                </button>
+                <button id="view-list" class="view-btn">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="lista-aniversariantes">
+            <!-- Conteúdo será inserido aqui via JavaScript -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div id="modal-overlay" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Detalhes do Aniversariante</h3>
+          <button id="close-modal" class="close-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-content" id="modal-content">
+          <!-- Conteúdo do modal será inserido aqui via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <p>Carregando dados...</p>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/calendario.js"></script>
+    <script src="js/filtros.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

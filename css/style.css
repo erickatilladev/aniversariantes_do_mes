@@ -1,0 +1,50 @@
+/* ===== VARIÁVEIS E RESET ===== */
+:root {
+  --primary: #2e7d32;
+  --primary-light: #4caf50;
+  --primary-dark: #1b5e20;
+  --secondary: #388e3c;
+  --accent: #8bc34a;
+  --success: #66bb6a;
+  --warning: #ffb300;
+  --danger: #050505;
+
+  --background: #f1f8e9;
+  --surface: #ffffff;
+  --surface-alt: #e8f5e9;
+  --text: #1b5e20;
+  --text-light: #4caf50;
+  --text-lighter: #81c784;
+
+  --border: #c8e6c9;
+  --border-light: #e8f5e9;
+
+  --shadow: 0 4px 6px rgba(46, 125, 50, 0.07);
+  --shadow-md: 0 10px 15px rgba(46, 125, 50, 0.1);
+  --shadow-lg: 0 20px 25px rgba(46, 125, 50, 0.15);
+
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 16px;
+
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
