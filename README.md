@@ -2,6 +2,7 @@
 
 Site desenvolvido para **exibir os aniversariantes do mês** da empresa de forma prática e organizada, integrando os dados de uma **planilha CSV** com filtros por filiais.
 
+Visualize o Projeto: https://clever-quokka-d41a49.netlify.app/
 ---
 
 ## Funcionalidades
